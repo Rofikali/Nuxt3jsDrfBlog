@@ -72,4 +72,14 @@ yarn preview
 bun run preview
 ```
 
+
+```bash
+# activate env and run djagno server
+source env/bin/activation
+cd 'folder name'
+python3 manage.py runserver
+
+```
+
+
 Check out the [deployment documentation](https://nuxt.com/docs/getting-started/deployment) for more information.
