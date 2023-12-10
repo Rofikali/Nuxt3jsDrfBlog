@@ -4,19 +4,21 @@ const route = useRoute()
 import Detail from '~/components/Detail.vue';
 
 const url = useRequestURL()
-const { error, pending, data: posts } = useLazyFetch(`http://127.0.0.1:8000/detail/${route.params.id}`);
-</script>
+const { error, pending, data: posts } = useLazyFetch(`http://127.0.0.1:8000/detail/${route.params.child}`);
 
+console.log('posts is here', posts)
+
+</script>
 
 <template>
     <div>
-        <h1>post detail page slug wise ... wise</h1>
+        <h1>This is parents child page here</h1>
         <div v-if="pending">
             Loading ...
         </div>
         <div v-else-if="posts">
-            ID is here - {{ route.params.id }}
-            <Detail :id=posts.id :slug=posts.slug :title=posts.title :content=posts.content :author=posts.author
+            ID is here - {{ route.params.child }}
+            <LazyDetail :id=posts.id :slug=posts.slug :title=posts.title :content=posts.content :author=posts.author
                 :key="posts.id" />
         </div>
         <div v-else="error">
@@ -27,5 +29,6 @@ const { error, pending, data: posts } = useLazyFetch(`http://127.0.0.1:8000/deta
         </p>
     </div>
 </template>
+
 
 <style scoped></style>

@@ -2,7 +2,7 @@
 
 </script>
 <template>
-    <LazyBaseAbout />
+    <LazyBaseHome />
 </template>
 
 

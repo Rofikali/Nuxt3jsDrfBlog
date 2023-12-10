@@ -8,8 +8,11 @@
         <li>
           <NuxtLink to="/">Home</NuxtLink>
         </li>
-        <li>
+        <!-- <li>
           <NuxtLink :to="{ name: 'posts' }">Posts</NuxtLink>
+        </li> -->
+        <li>
+          <NuxtLink :to="{ name: 'parents' }">Parents</NuxtLink>
         </li>
         <li>
           <NuxtLink :to="{ name: 'about' }">About</NuxtLink>
@@ -23,25 +26,8 @@
 <style scoped>
 .grid-layout {
   display: grid;
-  /* grid-template-columns: repeat(3, 1fr);
-  grid-template-rows: repeat(3, 1fr);
-  grid-auto-rows: 200px;
-  border: 3px solid green; */
 }
 
-/* .one {
-  border: 2px solid red;
-  height: 100%;
-  width: 100%;
-  grid-column-start: 1;
-  grid-column-end: 4;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  /* display: inline-block;
-  padding: 3px;
-
-} */
 * {
   padding: 0%;
   margin: 0%;

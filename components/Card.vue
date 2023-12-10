@@ -4,29 +4,8 @@ const props = defineProps(['id', 'slug', 'title', 'content', 'author']);
 </script>
 <template>
     <div>
-        <!-- <section class="text-gray-600 body-font">
-            <div class="container px-5 py-24 mx-auto">
-                <div class="flex flex-wrap sm:-m-4 -mx-4 -mb-10 -mt-4 md:space-y-0 space-y-6">
-                    <div class="p-4 md:w-1/3 flex">
-                        <div class="flex-grow pl-6">
-                            <h2 class="text-gray-900 text-lg title-font font-medium mb-2">
-                                ID - {{ id }}
-                                <NuxtLink :to="{ name: 'posts-id', params: { id: id } }">
-                                    {{ title }}
-                                </NuxtLink>
-                            </h2>
-                            <p class="leading-relaxed text-base">{{ content }}.</p>
-                            <a class="mt-3 text-indigo-500 inline-flex items-center">Detail - {{ author }}
-                            </a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section> -->
-
         <div class="grid grid-rows-3 grid-flow-col gap-4">
             <div class="row-span-3 ...">
-                <p>all data is here dud.</p>
                 <section class="text-gray-600 body-font">
                     <div class="container px-5 py-24 mx-auto">
                         <div class="flex flex-wrap sm:-m-4 -mx-4 -mb-10 -mt-4 md:space-y-0 space-y-6">
@@ -34,9 +13,12 @@ const props = defineProps(['id', 'slug', 'title', 'content', 'author']);
                                 <div class="flex-grow pl-6">
                                     <h2 class="text-gray-900 text-lg title-font font-medium mb-2">
                                         ID - {{ id }}
-                                        <NuxtLink :to="{ name: 'posts-id', params: { id: id } }">
+                                        <NuxtLink :to="{ name: 'parents-child', params: { child: id } }">
                                             {{ title }}
                                         </NuxtLink>
+                                        <!-- <NuxtLink :to="{ name: 'posts-id', params: { id: id } }">
+                                            {{ title }}
+                                        </NuxtLink> -->
                                     </h2>
                                     <p class="leading-relaxed text-base">{{ content }}.</p>
                                     <a class="mt-3 text-indigo-500 inline-flex items-center">Detail - {{ author }}
@@ -47,21 +29,7 @@ const props = defineProps(['id', 'slug', 'title', 'content', 'author']);
                     </div>
                 </section>
             </div>
-            <div class="col-span-2 ...">
-                <p>
-                    single data is here dud
-                </p>
-                <h2 class="text-gray-900 text-lg title-font font-medium mb-2">
-                    ID - {{ id }}
-                    <NuxtLink :to="{ name: 'posts-id', params: { id: id } }">
-                        {{ title }}
-                    </NuxtLink>
-                </h2>
-            </div>
-            <!-- <div class="row-span-2 col-span-2 ...">03</div> -->
         </div>
-
-
     </div>
 </template>
 

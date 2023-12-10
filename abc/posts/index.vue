@@ -17,7 +17,7 @@ const { pending, data: posts } = useLazyFetch("http://127.0.0.1:8000/");
         </div>
         <div v-else>
             <div v-for="post in posts">
-                <Card :id=post.id :slug=post.slug :title=post.title :content=post.content :author=post.author
+                <LazyCard :id=post.id :slug=post.slug :title=post.title :content=post.content :author=post.author
                     :key=post.id />
             </div>
         </div>
