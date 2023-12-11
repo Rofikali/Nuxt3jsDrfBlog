@@ -1,11 +1,5 @@
 <script setup>
-// defineProps(["id", "title", "content", "author"]);
-// defineProps(["id"]);
-// const route = useRoute()
-// import Detail from '~/components/Detail.vue';
 
-// const url = useRequestURL()
-// const { pending, data: posts } = useLazyFetch(`http://127.0.0.1:8000/detail/${route.params.slug}`);
 const props = defineProps(['id', 'slug', 'title', 'content', 'author']);
 </script>
 

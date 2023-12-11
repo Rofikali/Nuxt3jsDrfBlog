@@ -1,11 +1,14 @@
 <script setup>
 const route = useRoute()
-// import Detail from '~/components/Detail.vue';
+
 import Card from '~/components/Card.vue';
 
 const url = useRequestURL()
 const { pending, data: posts } = useLazyFetch("http://127.0.0.1:8000/");
 // console.log('iam data here', posts)
+
+
+
 </script>
 
 <template>
@@ -23,7 +26,10 @@ const { pending, data: posts } = useLazyFetch("http://127.0.0.1:8000/");
         </div>
         <h2>Hello Single Post is Here.</h2>
         <!-- <NuxtPage :foobar="123" /> -->
-        <NuxtPage :id='123' />
+        <h2>
+            Single Post with NuxtPage
+            <NuxtPage :foobar='1' />
+        </h2>
     </div>
 </template>
 
