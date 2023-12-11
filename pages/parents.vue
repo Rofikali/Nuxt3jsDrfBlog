@@ -23,8 +23,7 @@ const { pending, data: posts } = useLazyFetch("http://127.0.0.1:8000/");
         </div>
         <h2>Hello Single Post is Here.</h2>
         <!-- <NuxtPage :foobar="123" /> -->
-        <NuxtPage :id=posts.id />
-
+        <NuxtPage :id='123' />
     </div>
 </template>
 
