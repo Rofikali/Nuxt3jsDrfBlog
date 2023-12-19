@@ -3,25 +3,27 @@ const route = useRoute()
 // import Detail from '~/components/Detail.vue';
 import Card from '~/components/Card.vue';
 
-const url = useRequestURL()
-const { pending, data: posts } = useLazyFetch("http://127.0.0.1:8000/");
+// const url = useRequestURL()
+// const { pending, data: posts } = useLazyFetch("http://127.0.0.1:8000/");
 // console.log('iam data here', posts)
 </script>
 
 <template>
     <div>
         <div>
-            <div v-if="pending">
+            <!-- <div v-if="pending">
                 Loading ...
-            </div>
-            <div v-else>
-                <div v-for="post in posts">
+            </div> -->
+            <div>
+                <!-- <div v-for="post in posts">
                     <LazyCard :id=post.id :slug=post.slug :title=post.title :content=post.content :author=post.author
                         :key=post.id />
-                </div>
+                </div> -->
+                <LazyCard />
+                <h1>Parents.vue page.</h1>
             </div>
         </div>
-        <h2>Hello Single Post is Here.</h2>
+        <h2>This is Parents Page with composables.</h2>
         <!-- <NuxtPage :foobar="123" /> -->
         <NuxtPage :id='123' />
     </div>
