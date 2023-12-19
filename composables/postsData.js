@@ -5,27 +5,27 @@ import axios from 'axios';
 export default function useShowPosts() {
     const url = 'http://127.0.0.1:8000/'
     // const slug = ref([])
-    const allposts = ref([])
-    const error = ref(null)
+    const posts = ref([])
+    const error = ref('this is error')
 
 
     const getPosts = async () => {
-        // slug = ref([])
-        allposts.value = []
+
+        posts.value = []
         // error.value = []
 
         try {
             const res = await axios(url)
             console.log('response is her', res.data);
-            allposts.value = res.data
+            posts.value = res.data
         } catch (err) {
-            console.log('error block is here.');
+            console.log('error block is here.', err.value);
         }
 
     }
 
     return {
-        allposts,
+        posts,
         getPosts,
     }
 }

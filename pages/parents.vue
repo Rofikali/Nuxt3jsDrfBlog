@@ -23,7 +23,7 @@ import Card from '~/components/Card.vue';
                 <h1>Parents.vue page.</h1>
             </div>
         </div>
-        <h2>This is Parents Page with composables.</h2>
+        <h2>Parents.vue page with composables same page.</h2>
         <!-- <NuxtPage :foobar="123" /> -->
         <NuxtPage :id='123' />
     </div>
