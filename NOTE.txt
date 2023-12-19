@@ -15,4 +15,4 @@ echo "# Nuxt3jsDrfBlog" >> README.md
   git branch -M main
   git push -u origin main
   
-  
+  is this merging with git master branch or not just testing.
