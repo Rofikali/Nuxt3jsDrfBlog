@@ -1,5 +1,5 @@
 import { ref } from 'vue'
-import axios from 'axios';
+// import axios from 'axios';
 
 const route = useRoute()
 
@@ -8,37 +8,18 @@ export default function useShowPosts() {
     const { pending, data: posts, error } = useLazyFetch(url);
 
     const posts_data = ref();
+    const err = ref();
 
     const getPosts = async () => {
 
-        if (pending) {
-            console.log('pending ... PostsData', pending);
-        } else {
+        try {
+            // const res = await axios(url)
+            console.log('response is her');
             posts = posts_data.value
+        } catch (err) {
+            err.value
         }
-
-        // try {
-        //     posts = posts
-        //     console.log('response is her', posts);
-        // } catch (err) {
-        //     console.log('error block is here.', err.error);
-        // }
-
     }
-    // const getPosts = async () => {
-
-    //     posts.value = []
-    //     // error.value = []
-
-    //     try {
-    //         const res = await axios(url)
-    //         console.log('response is her', res.data);
-    //         posts.value = res.data
-    //     } catch (err) {
-    //         console.log('error block is here.', err.value);
-    //     }
-
-    // }
 
     return {
         posts,

@@ -11,14 +11,7 @@ import Card from '~/components/Card.vue';
 <template>
     <div>
         <div>
-            <!-- <div v-if="pending">
-                Loading ...
-            </div> -->
             <div>
-                <!-- <div v-for="post in posts">
-                    <LazyCard :id=post.id :slug=post.slug :title=post.title :content=post.content :author=post.author
-                        :key=post.id />
-                </div> -->
                 <LazyCard />
                 <h1>Parents.vue page.</h1>
             </div>

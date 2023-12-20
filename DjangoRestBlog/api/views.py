@@ -2,6 +2,7 @@ from api.models import Posts
 from rest_framework.generics import (
     ListAPIView, RetrieveAPIView
 )
+
 from .serializers import (PostListSerializer)
 
 
