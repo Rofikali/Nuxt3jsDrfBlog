@@ -6,6 +6,8 @@ import Card from '~/components/Card.vue';
 // const url = useRequestURL()
 // const { pending, data: posts } = useLazyFetch("http://127.0.0.1:8000/");
 // console.log('iam data here', posts)
+
+// const id = ref(1);
 </script>
 
 <template>
@@ -17,8 +19,8 @@ import Card from '~/components/Card.vue';
             </div>
         </div>
         <h2>Parents.vue page with composables same page.</h2>
-        <!-- <NuxtPage :foobar="123" /> -->
-        <NuxtPage :id='123' />
+        <NuxtPage :id="123" />
+        <!-- <NuxtPage :id='123' /> -->
     </div>
 </template>
 

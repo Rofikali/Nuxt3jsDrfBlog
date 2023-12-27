@@ -13,6 +13,9 @@ class HomeAPIView(ListAPIView):
     queryset = Posts.objects.all()
     serializer_class = PostListSerializer
 
+    # def get_queryset(self):
+    #     return super().get_queryset()
+
 
 class DetailAPIView(RetrieveAPIView):
     queryset = Posts.objects.all()

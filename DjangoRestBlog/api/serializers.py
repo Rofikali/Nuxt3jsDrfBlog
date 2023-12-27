@@ -7,13 +7,19 @@ class PostListSerializer(serializers.ModelSerializer):
         view_name='apis:detail',
         lookup_field='pk'
     )
-    author = serializers.SerializerMethodField()
 
     class Meta:
         model = Posts
-        fields = ['id', 'title', 'slug', 'content',
-                  'author', 'date_created', 'date_updated'
+        fields = ['id',
+                  'title',
+                  'slug',
+                  'content',
+                  'author',
+                  'date_created',
+                  'date_updated'
                   ]
+
+    author = serializers.SerializerMethodField()
 
     def get_author(self, obj):
         return obj.author.name
