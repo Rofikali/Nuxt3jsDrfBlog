@@ -10,6 +10,12 @@ Nuxt3 Frontend
     >>> create a subnav bar like codewithharry { html, css, js, python }
 
 
+>>> categoris's category
+    and categories's category's id page need to work.
+
+
+
+
 Django Python
     >>> create a django app like { html, css, js, python }
     >>> create a list view for { html, css, js, python }

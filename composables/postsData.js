@@ -1,15 +1,15 @@
 import { ref } from 'vue'
 // import axios from 'axios';
 
-const route = useRoute()
-
 export default function useShowPosts() {
     const posts_url = 'http://127.0.0.1:8000/'
-    const categories_url = 'http://127.0.0.1:8000/categories/'
     const { pending, data: posts, error } = useLazyFetch(posts_url);
 
     // const posts = ref();
-    // const err = ref();
+    // const pending = ref();
+    // const error = ref();
+    // const url = ref('');
+
 
     const getPosts = async () => {
 
@@ -23,15 +23,8 @@ export default function useShowPosts() {
         }
     }
 
-    // const getCategories = async () = >{
-    //     try {
-
-    //     } catch (error) {
-
-    //     }
-    // }
-
     return {
+        // all about posts 
         posts,
         pending,
         error,

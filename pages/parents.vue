@@ -1,13 +1,13 @@
 <script setup>
-const route = useRoute()
-// import Detail from '~/components/Detail.vue';
-import Card from '~/components/Card.vue';
 
+const route = useRoute()
+
+console.log('post detail is here', route.params.id);
+console.log('attra foobar ', useAttrs().foobar);
 // const url = useRequestURL()
 // const { pending, data: posts } = useLazyFetch("http://127.0.0.1:8000/");
 // console.log('iam data here', posts)
 
-// const id = ref(1);
 </script>
 
 <template>
@@ -19,7 +19,10 @@ import Card from '~/components/Card.vue';
             </div>
         </div>
         <h2>Parents.vue page with composables same page.</h2>
-        <NuxtPage :id="123" />
+        <NuxtPage :foobar="123" />
+        <!-- <CategoriesSingleCategory /> -->
+        <h1>Catching foobar value - {{ $attrs.foobar }}</h1>
+        <!-- <Detail :id=1 /> ### this is working well i will do this.  -->
         <!-- <NuxtPage :id='123' /> -->
     </div>
 </template>

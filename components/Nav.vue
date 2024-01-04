@@ -17,6 +17,9 @@
         <li>
           <NuxtLink :to="{ name: 'about' }">About</NuxtLink>
         </li>
+        <li>
+          <NuxtLink :to="{ name: 'categories' }">Categories</NuxtLink>
+        </li>
       </ul>
     </nav>
   </div>
