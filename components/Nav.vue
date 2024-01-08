@@ -20,6 +20,9 @@
         <li>
           <NuxtLink :to="{ name: 'categories' }">Categories</NuxtLink>
         </li>
+        <li>
+          <NuxtLink :to="{ name: 'users' }">Users</NuxtLink>
+        </li>
       </ul>
     </nav>
   </div>
@@ -35,6 +38,7 @@
   padding: 0%;
   margin: 0%;
   box-sizing: border-box;
+  background-color: grey;
 }
 
 .one ul {

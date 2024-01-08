@@ -32,4 +32,13 @@
 </template>
 
 
-<style scoped></style>
+<style scoped>
+*{
+    background-color: grey;
+}
+
+body{
+    background-color: grey;
+}
+
+</style>

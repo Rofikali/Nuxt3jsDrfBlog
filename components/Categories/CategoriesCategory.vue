@@ -3,7 +3,7 @@
 const route = useRoute();
 const parameter = route.params.category
 
-let const_id = ref(1);
+// let const_id = ref(1);
 
 import useCategoryPosts from '~/composables/categoriesData'
 import { onMounted } from "vue";
@@ -13,7 +13,7 @@ const {
     categoriesCategory,
     error,
     getCategoriesCategory
-} = useCategoryPosts('http://127.0.0.1:8000/categories/' + parameter);
+} = useCategoryPosts('http://127.0.0.1:8000/categories/', + parameter);
 // } = useCategoryPosts(`http://127.0.0.1:8000/categories/${route.params.category}`);
 onMounted(getCategoriesCategory);
 
@@ -28,17 +28,6 @@ onMounted(getCategoriesCategory);
         <div v-else-if="error">
             <h2>Error occured here - {{ error }}</h2>
         </div>
-        <!-- <div v-if="categoriesCategory">
-            Categories categoriesCategory are here - {{ categoriesCategory }}
-        </div> -->
-
-        <!-- <div v-for="item in categoriesCategory" :key="item.id">
-            <h1>
-                {{ item }}
-                <br>
-            </h1>
-        </div> -->
-
         <div v-else class="main-list">
             <div v-for=" { id, name, category, content, detail_url, date_created, date_updated } in categoriesCategory"
                 class="grid grid-rows-3 grid-flow-col gap-4" :key="id">
@@ -55,7 +44,6 @@ onMounted(getCategoriesCategory);
                                             <h2>{{ category }}</h2>
                                             <NuxtLink :to="{ name: 'categories-category-id', params: { id: id } }">
                                                 Category Deatail Page - {{ id }}
-                                                <!-- Category Deatail Page - {{ detail_url }} -->
                                             </NuxtLink>
                                         </h2>
                                         <a class="mt-3 text-indigo-500 inline-flex items-center">Category Url - {{
@@ -75,7 +63,7 @@ onMounted(getCategoriesCategory);
         </div>
         <div class="main-detail">
             <h3>Nuxt page is this.
-                <NuxtPage :name='index' />
+                <!-- <NuxtPage :name='index' /> -->
             </h3>
             <!-- categories-category-id -->
             <h1>What is Python3 use for</h1>
