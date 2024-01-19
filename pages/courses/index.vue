@@ -1,6 +1,6 @@
 <template>
     <div>
-        <h1>Post's Post page is this.</h1>
+        <h1>Course index.vue</h1>
     </div>
 </template>
 

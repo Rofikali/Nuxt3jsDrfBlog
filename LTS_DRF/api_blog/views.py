@@ -52,25 +52,28 @@ User = get_user_model()
 
 class PostListApiView(ListAPIView):
     serializer_class = PostListSerializer
+    queryset = Post.objects.all()
     # pagination_class = TestingOffsetPagination
     # filter_backends = [SearchFilter]
     # search_fields = ['content', 'title']
 
-    def get_queryset(self):
-        queryset = Post.objects.all()
+# {
+#     def get_queryset(self):
+#         queryset = Post.objects.all()
 
-        # Get unique authors
-        authors = User.objects.all()
+#         # Get unique authors
+#         authors = User.objects.all()
 
-        # Retrieve one post per author
-        unique_posts = []
-        for author in authors:
-            author_post = queryset.filter(author=author).first()
-            if author_post:
-                unique_posts.append(author_post)
+#         # Retrieve one post per author
+#         unique_posts = []
+#         for author in authors:
+#             author_post = queryset.filter(author=author).first()
+#             if author_post:
+#                 unique_posts.append(author_post)
 
-        return unique_posts
-        # return Response(unique_posts, status=HTTP_200_OK)
+#         return unique_posts
+#         return Response(unique_posts, status=HTTP_200_OK)
+# }
 
 
 class PostRetrivApiView(RetrieveAPIView):

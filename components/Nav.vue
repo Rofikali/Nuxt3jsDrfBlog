@@ -23,6 +23,9 @@
         <li>
           <NuxtLink :to="{ name: 'users' }">Users</NuxtLink>
         </li>
+        <li>
+          <NuxtLink :to="{ name: 'cat-category', params: { category: 'Linux' } }">Cat</NuxtLink>
+        </li>
       </ul>
     </nav>
   </div>

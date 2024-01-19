@@ -1,9 +1,8 @@
 <script setup>
 
 const route = useRoute();
-const user = useAttrs().user;
+// const user = useAttrs().user;
 const { data } = await useFetch(`http://127.0.0.1:8000/categories/category/${route.params.id}`)
-// const { data } = await useFetch('http://127.0.0.1:8000/categories/category/1')
 // console.log('what is inside categories/category ', data);
 </script>
 
@@ -15,9 +14,8 @@ const { data } = await useFetch(`http://127.0.0.1:8000/categories/category/${rou
     <div>
         <!-- <Card /> -->
         <!-- <categoriesSingleCategory /> -->
-
-        <h2>Data is here - {{ data }}</h2>
-        <!-- <h3>User - {{ user }}</h3> -->
+        {{ data }}
+        <h2>Data is here - </h2>
         <!-- user  {{ user }} -->
     </div>
     <!-- <div v-for="item in data" :key="item.id">

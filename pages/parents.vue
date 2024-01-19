@@ -1,42 +1,75 @@
 <script setup>
 
-const route = useRoute()
+// const route = useRoute()
 
-console.log('post detail is here', route.params.id);
-console.log('attra foobar ', useAttrs().foobar);
+
+// console.log('post detail is here', route.params.id);
 // const url = useRequestURL()
+
+// {
+// new here 
 // const { pending, data: posts } = useLazyFetch("http://127.0.0.1:8000/");
 // console.log('iam data here', posts)
+// }
 
 </script>
 
 <template>
-    <div>
-        <div>
+    <div class="main">
+        <div class="right">
             <div>
+
                 <LazyCard />
-                <h1>Parents.vue page.</h1>
+
+                <!-- { -->
+
+                <!-- <h1>Parents.vue page.</h1>
+                <div v-for="item in posts" :key="item.id">
+                    <NuxtLink :to="{ name: 'parents-child', params: { child: item.id } }">
+                        <h1> Title - {{ item.title }}</h1>
+                    </NuxtLink>
+                    <h1> Author - {{ item.author }}</h1>
+                    <h1> Content - {{ item.content }}</h1>
+                </div> -->
+
+                <!-- }  -->
+
             </div>
         </div>
-        <h2>Parents.vue page with composables same page.</h2>
-        <NuxtPage :foobar="123" />
-        <!-- <CategoriesSingleCategory /> -->
-        <h1>Catching foobar value - {{ $attrs.foobar }}</h1>
-        <!-- <Detail :id=1 /> ### this is working well i will do this.  -->
-        <!-- <NuxtPage :id='123' /> -->
+
+        <div class="left">
+            <h2>Parents.vue page for child page</h2>
+            <!-- <NuxtPage /> -->
+            <!-- { -->
+            <!-- new here  -->
+            <NuxtPage />
+            <!-- } -->
+            <!-- <h1>Catching foobar value</h1> -->
+        </div>
     </div>
 </template>
 
 
 <style scoped>
-div {
+.main {
     display: flex;
     justify-content: center;
     align-items: center;
     margin-top: 55px;
-    border: 2px solid red;
-    justify-content: space-around;
+    border: 2px solid rgb(0, 4, 255);
     margin: 5px;
     padding: 5px;
+}
+
+.right {
+    border: 2px solid red;
+    width: 40%;
+    height: auto;
+}
+
+.left {
+    border: 2px solid rgb(255, 208, 0);
+    width: 40%;
+    height: auto;
 }
 </style>

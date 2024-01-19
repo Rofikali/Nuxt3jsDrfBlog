@@ -1,7 +1,9 @@
 <script setup>
-const route = useRoute();
-const { data } = await useFetch('http://127.0.0.1:8000/categories/')
-console.log('what is inside data', data);
+// const route = useRoute();
+// const { data } = await useFetch('http://127.0.0.1:8000/categories/')
+// console.log('what is inside data', data);
+
+const user = useAttrs().user;
 </script>
 <template>
     <div class="main">
@@ -27,21 +29,20 @@ console.log('what is inside data', data);
             </li> 
         </div> -->
         <div class="left">
-            <h1>About Page, Users / [ ID.vue ] Page is this.</h1>
-            <div v-for="item in data" :key="item.id">
+            <h1>Users / [ id ] / categories index.vue Page.</h1>
+            <!-- <div v-for="item in data" :key="item.id">
                 <h1>
-                    <!-- Category - {{ item.category }} -->
 
                     <NuxtLink :to="{
                         name: 'users-id-categories-category',
                         params: { category: item.category }
                     }">
                         {{ item.category }}
-                        <!-- Categories/Category - {{ item.category }} -->
                     </NuxtLink>
 
                 </h1>
-            </div>
+            </div> -->
+<h2>User - {{ user }}</h2>
         </div>
 
 

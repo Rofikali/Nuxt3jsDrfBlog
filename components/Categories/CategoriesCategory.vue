@@ -3,7 +3,6 @@
 const route = useRoute();
 const parameter = route.params.category
 
-// let const_id = ref(1);
 
 import useCategoryPosts from '~/composables/categoriesData'
 import { onMounted } from "vue";
@@ -14,8 +13,9 @@ const {
     error,
     getCategoriesCategory
 } = useCategoryPosts('http://127.0.0.1:8000/categories/', + parameter);
-// } = useCategoryPosts(`http://127.0.0.1:8000/categories/${route.params.category}`);
 onMounted(getCategoriesCategory);
+
+// } = useCategoryPosts(`http://127.0.0.1:8000/categories/${route.params.category}`);
 
 
 </script>
@@ -62,11 +62,14 @@ onMounted(getCategoriesCategory);
             </div>
         </div>
         <div class="main-detail">
-            <h3>Nuxt page is this.
-                <!-- <NuxtPage :name='index' /> -->
+            <h3>
+                <h1>
+                    Nuxt page is this.
+                </h1>
+                <NuxtPage :user='categoriesCategory' />
             </h3>
             <!-- categories-category-id -->
-            <h1>What is Python3 use for</h1>
+            <!-- <h1>What is Python3 use for</h1>
             <p>Python3 use for web development, data science, machin learning, website hacking, web browser hacking,
                 operating system hacking and networ hacking, android phone hacking, mac os hacking and it's use for hacking
                 anythng</p>
@@ -74,7 +77,7 @@ onMounted(getCategoriesCategory);
             <p>Date - 12/11/2003</p>
             <h1>
                 Categories category components -> {{ route.params.category }}
-            </h1>
+            </h1> -->
         </div>
     </div>
 </template>

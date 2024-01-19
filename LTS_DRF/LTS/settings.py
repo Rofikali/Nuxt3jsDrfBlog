@@ -32,6 +32,7 @@ INSTALLED_APPS = [
     "corsheaders",
     'api_blog',
     'api_courses',
+    'api_python',
 ]
 
 MIDDLEWARE = [

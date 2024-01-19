@@ -4,6 +4,8 @@ const route = useRoute();
 const parameter = route.params.category
 const add_id = route.params.id
 
+// const user = useAttrs().user;
+
 import useCategoryPosts from '~/composables/categoriesData'
 import { onMounted } from "vue";
 
@@ -12,7 +14,7 @@ const {
     error_data,
     category,
     getCategory
-} = useCategoryPosts('http://127.0.0.1:8000/categories/category/' + add_id);
+} = useCategoryPosts('http://127.0.0.1:8000/categories/category/' + 1);
 // } = useCategoryPosts(`http://127.0.0.1:8000/categories/${route.params.category}`);
 onMounted(getCategory);
 
@@ -38,8 +40,7 @@ onMounted(getCategory);
         </div> -->
 
         <div v-else>
-            <div 
-                class="grid grid-rows-3 grid-flow-col gap-4">
+            <div class="grid grid-rows-3 grid-flow-col gap-4">
                 <div class="row-span-3">
                     <section class="text-gray-600 body-font">
                         <div class="container px-5 py-24 mx-auto">
@@ -51,15 +52,10 @@ onMounted(getCategory);
                                             <p>{{ name }}</p>
                                             <br>
                                             <h2>{{ category }}</h2>
-                                            <!-- <NuxtLink :to="{ name: 'categories-category-id', params: { id: id } }"> -->
-                                                Category Deatail Page - {{ id }}
-                                                <br>
-                                                Category Deatail Page - {{ detail_url }}
-                                            <!-- </NuxtLink> -->
+                                            Category Deatail Page - {{ id }}
+                                            <br>
+                                            Category Deatail Page - {{ detail_url }}
                                         </h2>
-                                        <!-- <a class="mt-3 text-indigo-500 inline-flex items-center">Category Url - {{
-                                            category_url }}
-                                        </a> -->
                                         <p>{{ content }}</p>
                                         <br>
                                         <p>{{ date_created }}</p>
@@ -72,13 +68,15 @@ onMounted(getCategory);
                 </div>
             </div>
         </div>
-        <h1>
+        <!-- <h1>
             Category World Dud -> {{ route.params.category }}
-        </h1>
-        <br>
+            <h2>user - {{ user }}</h2>
+        </h1> -->
+        <!-- <h2>data - {{ getCategory }}</h2> -->
+        <!-- <br>
         <h1>
             ID - World Dud -> {{ route.params.id }}
-        </h1>
+        </h1> -->
     </div>
 </template>
 

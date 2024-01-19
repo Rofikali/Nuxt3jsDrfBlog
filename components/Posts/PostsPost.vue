@@ -1,5 +1,7 @@
 <script setup>
-
+const route = useRoute();
+const id = route.params.id
+// console.log('here is id', id);
 // import { onMounted } from "vue";
 import useShowPosts from '~/composables/postsData';
 import { onMounted } from "vue";
@@ -10,12 +12,8 @@ const {
     error,
     pending,
     getPosts
-} = useShowPosts();
+} = useShowPosts('http://127.0.0.1:8000/detail/' + id);
 onMounted(getPosts);
-
-console.log('all posts', posts);
-console.log('get posts', getPosts);
-// console.log('first route, Card.vue Page', getPosts);
 
 
 </script>
@@ -27,9 +25,11 @@ console.log('get posts', getPosts);
         <div v-else-if="pending">
             <h2>pending is here - {{ pending }}</h2>
         </div>
+        <div v-else>
+            data - {{ posts }}
+        </div>
         <div v-else="posts">
-            <div v-for=" { id, title, content, author, date_posted } in posts" class="grid grid-rows-3 grid-flow-col gap-4"
-                :key="id">
+            <div class="grid grid-rows-3 grid-flow-col gap-4">
                 <div class="row-span-3 ...">
                     <section class="text-gray-600 body-font">
                         <div class="container px-5 py-24 mx-auto">
@@ -37,15 +37,12 @@ console.log('get posts', getPosts);
                                 <div class="p-4 md:w-1/3 flex">
                                     <div class="flex-grow pl-6">
                                         <h2 class="text-gray-900 text-lg title-font font-medium mb-2">
-                                            <!-- ID - {{ id }} -->
-                                            <NuxtLink :to="{ name: 'posts-id', params: { id: id } }">
-                                                Title - {{ title }}
-                                            </NuxtLink>
+                                            ID - {{ posts.id }}
                                         </h2>
-                                        <p class="leading-relaxed text-base">Content - {{ content }}.</p>
-                                        <a class="mt-3 text-indigo-500 inline-flex items-center">Author - {{ author }}
+                                        <p class="leading-relaxed text-base">title - {{ posts.title }}.</p>
+                                        <a class="mt-3 text-indigo-500 inline-flex items-center">Author - {{ posts.author }}
                                         </a>
-                                        <h3>Date - {{ date_posted }}</h3>
+                                        <h3>Content - {{ posts.content }}</h3>
                                     </div>
                                 </div>
                             </div>
@@ -54,15 +51,6 @@ console.log('get posts', getPosts);
                 </div>
             </div>
         </div>
-        <!-- <div v-if="posts">
-            <h1>if block - {{ posts }} <span>Nothing here. </span></h1>
-            <br>
-            <br>
-        </div>
-        <div v-else="">
-            <h1>else block - </h1>
-        </div> -->
-        <h1>LazyCard page is this.</h1>
     </div>
 </template>
 

@@ -1,28 +1,29 @@
 <script setup>
+
 const route = useRoute();
-const { data } = await useFetch(`http://127.0.0.1:8000/categories/category/${route.params.id}`)
+const { data } = await useFetch('http://127.0.0.1:8000/categories/')
 console.log('what is inside data', data);
+
 </script>
+
 <template>
     <div class="main">
         <div class="left">
-            <!-- this is left side here. -->
-            <h1>Users / [ ID.vue ] Page is this.</h1>
-            <br>
-            <li>
-                <NuxtLink :to="{ name: 'users-id-categories' }">
-                    All_Categories
-                </NuxtLink>
-            </li>
-            <li>
-                <NuxtLink to="#">Todos</NuxtLink>
-            </li>
-            <li>
-                <NuxtLink to="#">Carts</NuxtLink>
-            </li>
+            <h1>Cat / [category ].vue Page.</h1>
+            <div v-for="item in data">
+                <h1>
+                    <NuxtLink :to="{
+                        name: 'cat-category-category',
+                        params: { category: item.category }
+                    }">
+                        {{ item.category }}
+                    </NuxtLink>
+
+                </h1>
+            </div>
         </div>
+
         <div class="right">
-            <h1>Users / [ ID.vue ] Page for NuxtPage.</h1>
             <div>
                 <NuxtPage :user="data" />
             </div>
@@ -35,7 +36,8 @@ console.log('what is inside data', data);
     display: flex;
     justify-content: center;
     align-items: center;
-    /* margin: 5px; */
+    margin: 3rem;
+    /* padding: 10px; */
 }
 
 .left {
@@ -54,4 +56,13 @@ console.log('what is inside data', data);
     width: 40vw;
     height: 50vh;
 }
+
+/* .middle {
+    border: 2px solid green;
+    margin: 15px;
+    margin: 15px auto;
+    padding: 10px;
+    width: 40vw;
+    height: 50vh;
+} */
 </style>

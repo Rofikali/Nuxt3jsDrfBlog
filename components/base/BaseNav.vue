@@ -1,44 +1,103 @@
 <script setup>
 
+// import useShowPosts from '~/composables/postsData';
+import useCategoryPosts from '~/composables/categoriesData'
+import { onMounted } from "vue";
+
+// const {
+//     pendings,
+//     categories,
+//     errors,
+//     getCategories
+// } = useCategoryPosts();
+// onMounted(getCategories);
+// } = useCategoryPosts('http://127.0.0.1:8000/categories/');
+
+
+// new one 
+// const route = useRoute();
+// const { data } = await useFetch(`http://127.0.0.1:8000/${route.params.courses}`)
+
 </script>
 <template>
-    <div>
-        <header class="text-gray-600 body-font">
-            <div class="container mx-auto flex flex-wrap p-5 flex-col md:flex-row items-center">
-                <a class="flex title-font font-medium items-center text-gray-900 mb-4 md:mb-0">
-                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-linecap="round"
-                        stroke-linejoin="round" stroke-width="2" class="w-10 h-10 text-white p-2 bg-indigo-500 rounded-full"
-                        viewBox="0 0 24 24">
-                        <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"></path>
-                    </svg>
-                    <span class="ml-3 text-xl">Tailblocks</span>
-                </a>
-                <nav class="md:ml-auto md:mr-auto flex flex-wrap items-center text-base justify-center">
-                    <a class="mr-5 hover:text-gray-900">First Link</a>
-                    <a class="mr-5 hover:text-gray-900">Second Link</a>
-                    <a class="mr-5 hover:text-gray-900">Third Link</a>
-                    <a class="mr-5 hover:text-gray-900">Fourth Link</a>
-                </nav>
-                <button
-                    class="inline-flex items-center bg-gray-100 border-0 py-1 px-3 focus:outline-none hover:bg-gray-200 rounded text-base mt-4 md:mt-0">Button
-                    <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                        class="w-4 h-4 ml-1" viewBox="0 0 24 24">
-                        <path d="M5 12h14M12 5l7 7-7 7"></path>
-                    </svg>
-                </button>
-            </div>
-        </header>
+    <!-- <div v-if="pendings">
+        <h2>Pendig is here dud - {{ pendings }}</h2>
     </div>
+    <div v-else-if="errors">
+        <h2>Error occured here - {{ errors }}</h2>
+    </div>
+
+    <div v-else class="snd-nav">
+        <div v-for="item in categories" :key="item.id">
+            <ul>
+                <li>
+                    <NuxtLink :to="{
+                        name: 'categories-category',
+                        params: { category: item.category }
+                    }">
+                        {{ item.category }}
+                    </NuxtLink>
+                </li>
+            </ul>
+        </div>
+    </div> -->
+    <br>
+    <ul class="snd-nav">
+        <li>
+            <NuxtLink :to="{
+                name: 'courses-courses',
+                params: { courses: 'python' }
+            }">
+                Python
+            </NuxtLink>
+        </li>
+        <br>
+        <li>
+            <NuxtLink :to="{
+                name: 'courses-courses',
+                params: { courses: 'posts' }
+            }">
+                Anothr_Posts
+            </NuxtLink>
+        </li>
+        <br>
+        <!-- <li>
+            <NuxtLink :to="{
+                name: 'courses-courses',
+                params: { courses: 'django' }
+            }">
+            Django
+        </NuxtLink>
+    </li>
+    <br> -->
+    </ul>
 </template>
 
 
 <style scoped>
-*{
+* {
     background-color: grey;
+    margin: 0%;
+    padding: 0%;
 }
 
-body{
-    background-color: grey;
+.snd-nav {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 2px solid black;
 }
 
+ul {
+    margin: 1rem;
+    /* border: 2px solid green; */
+}
+
+ul li {
+    padding: 1%;
+    /* border: 2px solid rgb(255, 187, 0); */
+    list-style: none;
+    box-sizing: border-box;
+    padding: 0.6em;
+}
 </style>

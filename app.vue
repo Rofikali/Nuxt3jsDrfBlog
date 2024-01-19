@@ -5,6 +5,8 @@
 <template>
   <div>
     <NuxtLayout>
+      <!-- <template #header> Some header template content. </template> -->
+
       <NuxtPage />
     </NuxtLayout>
     <!-- <Nav /> -->

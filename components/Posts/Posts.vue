@@ -13,8 +13,8 @@ const {
 } = useShowPosts();
 onMounted(getPosts);
 
-console.log('all posts', posts);
-console.log('get posts', getPosts);
+// console.log('all posts', posts);
+// console.log('get posts', getPosts);
 // console.log('first route, Card.vue Page', getPosts);
 
 

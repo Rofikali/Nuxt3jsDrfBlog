@@ -1,18 +1,25 @@
+<script setup>
+
+</script>
 
 <template>
     <div>
         <Nav />
         <br>
         <BaseNav />
+        <!-- <header>
+            <slot name="header">
+                Default header content
+            </slot>
+        </header> -->
         <slot />
         <!-- <AppFooter /> -->
     </div>
 </template>
 
-<script setup>
-import BaseNav from '~/components/base/BaseNav.vue';
 
-
-</script>
-
-<style scoped></style>
+<style scoped>
+header {
+    border: 2px solid red;
+}
+</style>

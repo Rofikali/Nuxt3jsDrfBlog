@@ -1,15 +1,12 @@
-<script setup>
-</script>
-
 <template>
     <div>
-        <h1>Hello dud all categories are here.</h1>
-        <h2>
-            <!-- <CategoriesCard /> -->
-            <LazyCategoriesCard />
-        </h2>
+        <h1>Categories / index.vue Page.</h1>
+        <CategoriesCard />
     </div>
 </template>
 
+<script setup>
+
+</script>
 
 <style scoped></style>
