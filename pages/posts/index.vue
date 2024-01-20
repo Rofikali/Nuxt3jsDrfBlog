@@ -1,8 +1,6 @@
 <template>
     <div>
-        <secondNav />
-        <slot />
-        <!-- <AppFooter /> -->
+        <h1>This is posts.index page here.</h1>
     </div>
 </template>
 

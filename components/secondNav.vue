@@ -4,20 +4,42 @@
 
 <template>
   <div>
-    <nav>
-      <ul>
-        <li>
-          <NuxtLink :to="{ name: 'posts-popular' }">Popular-Posts</NuxtLink>
-        </li>
-        <li>
-          <NuxtLink :to="{ name: 'posts-resent' }">Resent-Posts</NuxtLink>
-        </li>
-        <li>
-          <NuxtLink :to="{ name: 'posts-tranding' }">Tranding-Posts</NuxtLink>
-        </li>
-      </ul>
+    <nav class="container">
+      <div class="one">
+        <ul>
+          <li>
+            <NuxtLink :to="{ name: 'posts-popular' }">Popular-Posts</NuxtLink>
+          </li>
+        </ul>
+      </div>
+      <div class="two">
+        <ul>
+          <li>
+            <NuxtLink :to="{ name: 'posts-resent' }">Resent-Posts</NuxtLink>
+          </li>
+        </ul>
+      </div>
+      <div class="three">
+        <ul>
+          <li>
+            <NuxtLink :to="{ name: 'posts-trending' }">Tranding-Posts</NuxtLink>
+          </li>
+        </ul>
+      </div>
     </nav>
   </div>
 </template>
 
-<style scoped></style>
+<style scoped>
+.container {
+  display: flex;
+  /* border: 2px solid red; */
+  gap: 15px;
+  justify-content: center;
+  width: 98%;
+  margin: auto;
+  text-shadow: 3px 3px 3px red;
+  border-bottom: 2px solid rgb(240, 225, 225);
+  padding: 15px;
+}
+</style>

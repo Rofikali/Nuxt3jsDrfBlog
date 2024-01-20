@@ -7,7 +7,6 @@
     <NuxtLayout name="default">
       <NuxtPage />
     </NuxtLayout>
-    <!-- <Nav /> -->
   </div>
 </template>
 

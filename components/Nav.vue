@@ -9,7 +9,8 @@
           <NuxtLink to="/">Home</NuxtLink>
         </li>
         <li>
-          <NuxtLink :to="{ name: 'posts' }">Posts</NuxtLink>
+          <NuxtLink :to="{ name: 'posts-popular' }">Posts</NuxtLink>
+          <!-- <NuxtLink :to="{ name: 'posts' }">Posts {{  if i want to go with posts-index page. }}</NuxtLink> -->
         </li>
         <li>
           <NuxtLink :to="{ name: 'parents' }">Parents</NuxtLink>
