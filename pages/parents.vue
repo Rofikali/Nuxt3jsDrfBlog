@@ -19,8 +19,6 @@
         <div class="right">
             <div>
 
-                <LazyCard />
-
                 <!-- { -->
 
                 <!-- <h1>Parents.vue page.</h1>
@@ -42,7 +40,7 @@
             <!-- <NuxtPage /> -->
             <!-- { -->
             <!-- new here  -->
-            <NuxtPage />
+            <!-- <NuxtPage /> -->
             <!-- } -->
             <!-- <h1>Catching foobar value</h1> -->
         </div>

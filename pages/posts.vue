@@ -2,12 +2,11 @@
 
 </script>
 
-
 <template>
     <div>
-        <h1>Posts page is this.</h1>
-        <!-- <LazyPosts /> -->
-        <LazyPosts />
+        <NuxtLayout name="custom">
+            <NuxtPage />
+        </NuxtLayout>
     </div>
 </template>
 

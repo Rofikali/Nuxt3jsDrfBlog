@@ -5,15 +5,8 @@
 <template>
     <div>
         <Nav />
-        <br>
-        <BaseNav />
-        <!-- <header>
-            <slot name="header">
-                Default header content
-            </slot>
-        </header> -->
+        <hr />
         <slot />
-        <!-- <AppFooter /> -->
     </div>
 </template>
 

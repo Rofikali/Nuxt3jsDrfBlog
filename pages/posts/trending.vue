@@ -1,7 +1,6 @@
 <template>
     <div>
-        <h1>Categories / index.vue Page.</h1>
-        <CategoriesCard />
+        <h1>Trending one here.</h1>
     </div>
 </template>
 

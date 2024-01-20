@@ -8,26 +8,18 @@
         <li>
           <NuxtLink to="/">Home</NuxtLink>
         </li>
-        <!-- <li>
+        <li>
           <NuxtLink :to="{ name: 'posts' }">Posts</NuxtLink>
-        </li> -->
+        </li>
         <li>
           <NuxtLink :to="{ name: 'parents' }">Parents</NuxtLink>
         </li>
-        <li>
-          <NuxtLink :to="{ name: 'about' }">About</NuxtLink>
-        </li>
-        <li>
-          <NuxtLink :to="{ name: 'categories' }">Categories</NuxtLink>
-        </li>
-        <li>
-          <NuxtLink :to="{ name: 'users' }">Users</NuxtLink>
-        </li>
-        <li>
+        <!-- <li>
           <NuxtLink :to="{ name: 'cat-category', params: { category: 'Linux' } }">Cat</NuxtLink>
-        </li>
+        </li>  -->
       </ul>
     </nav>
+    <h1 style="color: black;">This is default layout here.</h1>
   </div>
 </template>
 

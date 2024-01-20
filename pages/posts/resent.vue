@@ -1,6 +1,6 @@
 <template>
     <div>
-        <h1>Course index.vue</h1>
+        <h1>Resenting one here.</h1>
     </div>
 </template>
 
