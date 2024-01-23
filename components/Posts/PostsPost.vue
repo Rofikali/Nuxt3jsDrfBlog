@@ -12,7 +12,7 @@ const {
     error,
     pending,
     getPosts
-} = useShowPosts('http://127.0.0.1:8000/detail/' + id);
+} = useShowPosts('http://127.0.0.1:8000/posts/' + id);
 onMounted(getPosts);
 
 
