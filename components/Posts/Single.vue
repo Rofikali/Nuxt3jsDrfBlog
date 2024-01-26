@@ -8,7 +8,7 @@ const data = {
 
 defineProps{
     'id': '1',
-    'title': 'hello man this is what happening here.'
+        'title': 'hello man this is what happening here.'
 }
 </script>
 
