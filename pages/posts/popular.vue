@@ -19,15 +19,23 @@ const data = [
 <template>
     <div class='container'>
         <div class="listing-data">
-            <div v-for="item in data" :key="item.id">
+            <div v-for="item in data" :key="item.id" class="fst">
                 <NuxtLink :to="{ name: 'posts-popular-id', params: { id: item.id } }">
                     <h2>Title - {{ item.title }}</h2>
                 </NuxtLink>
             </div>
+            <!-- <div class="single-data">
+                <h2>NuxtPage</h2>
+                here would be Q/N, Accouncement, DownloadableData.
+                like ( CWD )
+                <NuxtPage />
+            </div> -->
         </div>
-        <div class="single-data">
+        <div class="right-one">
+            <!-- here would be single data -->
             <h2>NuxtPage</h2>
-            <NuxtPage />
+            <!-- <NuxtPage /> -->
+            <PostsSingle />
         </div>
     </div>
 </template>
@@ -43,6 +51,10 @@ const data = [
     justify-content: center;
 }
 
+.fst {
+    border: 2px solid green;
+}
+
 .listing-data {
     border: 2px solid rgb(128, 0, 0);
     width: 25%;
@@ -51,5 +63,13 @@ const data = [
 .single-data {
     border: 2px solid rgb(255, 166, 0);
     width: 70%;
+    margin: auto;
+    margin-top: 5px;
+}
+
+.right-one {
+    border: 2px solid red;
+    margin: auto;
+
 }
 </style>
