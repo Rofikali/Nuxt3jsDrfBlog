@@ -15,6 +15,9 @@
         <li>
           <NuxtLink :to="{ name: 'parents' }">Parents</NuxtLink>
         </li>
+        <li>
+          <NuxtLink :to="{ name: 'courses-python' }">Courses</NuxtLink>
+        </li>
         <!-- <li>
           <NuxtLink :to="{ name: 'cat-category', params: { category: 'Linux' } }">Cat</NuxtLink>
         </li>  -->

@@ -4,12 +4,12 @@ const data = {
     'title': 'this is first title'
 }
 
+const props = defineProps(['id', 'title'])
 
-
-defineProps{
-    'id': '1',
-        'title': 'hello man this is what happening here.'
-}
+// defineProps{
+//     'id': '1',
+//         'title': 'hello man this is what happening here.'
+// }
 </script>
 
 <template>
