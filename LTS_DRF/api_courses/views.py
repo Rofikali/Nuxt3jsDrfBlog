@@ -47,3 +47,4 @@ class CategoryRetrivApiView(RetrieveAPIView):
     queryset = CategoryList.objects.all()
     serializer_class = CategoryListSerializer
     # lookup_field = 'pk'
+    # lookup_field = ('category' , 'pk' )

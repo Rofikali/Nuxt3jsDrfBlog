@@ -1,22 +1,19 @@
 <script setup>
 
-// import { onMounted } from "vue";
-import useShowPosts from '~/composables/postsData';
-import { onMounted } from "vue";
-
-// const { allposts } = useShowPosts();
-const {
-    posts,
-    error,
-    pending,
-    getPosts
-} = useShowPosts();
-onMounted(getPosts);
-
-// console.log('all posts', posts);
-// console.log('get posts', getPosts);
-// console.log('first route, Card.vue Page', getPosts);
-
+// defineProps(['posts'])
+defineProps({
+    // posts: Object
+    posts: {
+        type: Object,
+        required: true
+    },
+    error: {
+        type: String
+    },
+    pending: {
+        type: Boolean
+    }
+})
 
 </script>
 <template>
@@ -37,14 +34,15 @@ onMounted(getPosts);
                                 <div class="p-4 md:w-1/3 flex">
                                     <div class="flex-grow pl-6">
                                         <h2 class="text-gray-900 text-lg title-font font-medium mb-2">
-                                            <!-- ID - {{ id }} -->
+                                            ID - {{ id }}
                                             <NuxtLink :to="{ name: 'posts-id', params: { id: id } }">
                                                 Title - {{ title }}
                                             </NuxtLink>
                                         </h2>
                                         <p class="leading-relaxed text-base">Content - {{ content }}.</p>
-                                        <a class="mt-3 text-indigo-500 inline-flex items-center">Author - {{ author }}
-                                        </a>
+                                        <NuxtLink :to="{ name: 'posts-user', params: { user: author } }">
+                                            Author - {{ author }}
+                                        </NuxtLink>
                                         <h3>Date - {{ date_posted }}</h3>
                                     </div>
                                 </div>
@@ -54,15 +52,6 @@ onMounted(getPosts);
                 </div>
             </div>
         </div>
-        <!-- <div v-if="posts">
-            <h1>if block - {{ posts }} <span>Nothing here. </span></h1>
-            <br>
-            <br>
-        </div>
-        <div v-else="">
-            <h1>else block - </h1>
-        </div> -->
-        <h1>LazyCard page is this.</h1>
     </div>
 </template>
 

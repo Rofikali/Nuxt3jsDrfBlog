@@ -8,11 +8,8 @@
         <li>
           <NuxtLink to="/">Home</NuxtLink>
         </li>
-        <!-- <li>
-          <NuxtLink :to="{ name: 'posts' }">Posts</NuxtLink>
-        </li> -->
         <li>
-          <NuxtLink :to="{ name: 'parents' }">Parents</NuxtLink>
+          <NuxtLink :to="{ name: 'posts' }">Posts</NuxtLink>
         </li>
         <li>
           <NuxtLink :to="{ name: 'about' }">About</NuxtLink>

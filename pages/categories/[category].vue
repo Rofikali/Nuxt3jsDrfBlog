@@ -1,38 +1,47 @@
 <script setup>
 
 const route = useRoute();
-// const user = useAttrs().user;
-const { data } = await useFetch(`http://127.0.0.1:8000/categories/${route.params.category}`)
-// const { data } = await useFetch('http://127.0.0.1:8000/python')
-// console.log('what is inside categories/category ', data);
+import useCategoryPosts from '~/composables/categoriesData'
+import { onMounted } from "vue";
+
+const {
+    pending,
+    categoriesCategory,
+    error,
+    getCategoriesCategory
+} = useCategoryPosts(`http://127.0.0.1:8000/categories/${route.params.category}`);
+onMounted(getCategoriesCategory);
+
+import { ref } from 'vue';
+const count = ref(0);
+
+
+// Function to be executed after a delay
+// function delayedFunction() {
+//     console.log("This function was delayed!");
+// }
+
+// // Set a timeout of 2000 milliseconds (2 seconds) for the delayedFunction
+// setTimeout(delayedFunction, 2000);
+
+// import ID from '../categories/[category]/[id].vue'
+import IdVue from '../categories/[category]/[id].vue';
+
 </script>
 
 <template>
     <div class="main">
-        <div class="first">
+        <div>
             <h1>Categories / [category].vue Page.</h1>
-            <div v-for="item in data" :key="item.id">
-                <h1>
-                    <NuxtLink :to="{
-                        name: 'categories-category-id',
-                        params: { id: item.id }
-                    }">
-                        categories titles - {{ item.name }}
-                    </NuxtLink>
-                </h1>
-                <!-- <h2>category - {{ item.category }}</h2>
-                <p>content - {{ item.content }}</p> -->
-                <!-- <p>{{ item.detail_url }}</p> -->
-            </div>
+            <LazyCategoriesCategory :categoriesCategory="categoriesCategory" :pending="pending" :error="error" />
         </div>
-        <br>
-        <div class="second">
-            <h1>Categories / [category].vue Page.</h1>
-            <h1>Categories / [ caegory ] / [category].vue || will show here ||</h1>
+        <div>
             <h2>Nuxt Page</h2>
-            <hr>
-            <!-- <NuxtPage /> -->
-            <NuxtPage :user="123" />
+            <!-- <button @click="count++">count is : {{ count }}</button> -->
+            <button @click="">count is : {{ count }}</button>
+            <NuxtPage />
+            <!-- <CategoriesSingle :category="categoriesCategory" :pending_data="pending" :error_data="error" /> -->
+            <!--  <NuxtPage :user="123" /> -->
             <!-- <NuxtPage :user="data" /> -->
         </div>
     </div>
@@ -42,21 +51,5 @@ const { data } = await useFetch(`http://127.0.0.1:8000/categories/${route.params
 <style scoped>
 .main {
     display: flex;
-    width: 90%;
-    justify-content: center;
-    align-items: center;
-    border: 2px solid rgb(0, 4, 255);
-    margin: auto;
-}
-
-.first {
-    border: 2px solid red;
-    width: 45%;
-    margin: 10px;
-}
-
-.second {
-    border: 2px solid rgb(0, 110, 255);
-    width: 45%;
 }
 </style>

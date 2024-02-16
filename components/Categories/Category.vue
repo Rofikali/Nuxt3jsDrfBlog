@@ -1,21 +1,18 @@
 <script setup>
 
-const route = useRoute();
-const parameter = route.params.category
-
-
-import useCategoryPosts from '~/composables/categoriesData'
-import { onMounted } from "vue";
-
-const {
-    pending,
-    categoriesCategory,
-    error,
-    getCategoriesCategory
-} = useCategoryPosts('http://127.0.0.1:8000/categories/', + parameter);
-onMounted(getCategoriesCategory);
-
-// } = useCategoryPosts(`http://127.0.0.1:8000/categories/${route.params.category}`);
+defineProps(
+    {
+        categoriesCategory: {
+            type: Object
+        },
+        pending: {
+            type: Boolean
+        },
+        error: {
+            type: String
+        }
+    }
+)
 
 
 </script>
@@ -61,24 +58,15 @@ onMounted(getCategoriesCategory);
                 </div>
             </div>
         </div>
-        <div class="main-detail">
+        <!-- <div class="main-detail">
             <h3>
                 <h1>
                     Nuxt page is this.
                 </h1>
-                <NuxtPage :user='categoriesCategory' />
+                <NuxtPage />
             </h3>
-            <!-- categories-category-id -->
-            <!-- <h1>What is Python3 use for</h1>
-            <p>Python3 use for web development, data science, machin learning, website hacking, web browser hacking,
-                operating system hacking and networ hacking, android phone hacking, mac os hacking and it's use for hacking
-                anythng</p>
-            <h3>Author - Micky Virus</h3>
-            <p>Date - 12/11/2003</p>
-            <h1>
-                Categories category components -> {{ route.params.category }}
-            </h1> -->
-        </div>
+        </div> -->
+        <!-- <NuxtPage :user='categoriesCategory' /> -->
     </div>
 </template>
 
@@ -89,29 +77,5 @@ onMounted(getCategoriesCategory);
     padding: 0%;
     box-sizing: border-box;
 
-}
-
-.main {
-    display: flex;
-    border: 2px solid rgb(13, 14, 13);
-    width: 90vw;
-    /* height: auto; */
-    /* padding: 2 */
-    margin: auto;
-}
-
-.main-list {
-    border: 2px solid red;
-    /* margin: 2em; */
-    padding: 2em;
-    /* display: flex; */
-}
-
-
-.main-detail {
-    border: 2px solid green;
-    padding: 2em;
-    /* margin: 44px; */
-    margin-left: 1em;
 }
 </style>

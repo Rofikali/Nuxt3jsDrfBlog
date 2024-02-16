@@ -53,6 +53,7 @@ User = get_user_model()
 class PostListApiView(ListAPIView):
     serializer_class = PostListSerializer
     queryset = Post.objects.all()
+
     # pagination_class = TestingOffsetPagination
     # filter_backends = [SearchFilter]
     # search_fields = ['content', 'title']
@@ -92,7 +93,7 @@ class PostRetrivApiView(RetrieveAPIView):
 
 class PerticularUserPosts(ListAPIView):
     # queryset = Post.objects.all()
-    pagination_class = TestingOffsetPagination
+    # pagination_class = TestingOffsetPagination
     serializer_class = PostListSerializer
     permission_classes = [AllowAny]
 

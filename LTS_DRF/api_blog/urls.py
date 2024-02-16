@@ -5,7 +5,6 @@ from . views import (
     # PostUpdateApiView,
     # PostDeleteApiView,
     # PostCreateApiView,
-    # particular user's post
     PerticularUserPosts
 )
 

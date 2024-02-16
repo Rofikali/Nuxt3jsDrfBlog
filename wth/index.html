@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Arial', sans-serif;
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+    }
+
+    #navbar {
+      background-color: #333;
+      color: white;
+      padding: 10px;
+      width: 100%;
+      text-align: center;
+    }
+
+    #container {
+      display: flex;
+      flex: 1;
+    }
+
+    #left-sidebar {
+      width: 200px;
+      background-color: #f0f0f0;
+      padding: 20px;
+      border-right: 2px solid grey; /* Left sidebar border color */
+    }
+
+    #main-content {
+      flex: 1;
+      padding: 20px;
+    }
+
+    #right-sidebar {
+      width: 200px;
+      background-color: #f0f0f0;
+      padding: 20px;
+      border-left: 2px solid grey; /* Right sidebar border color */
+    }
+
+    .post {
+      cursor: pointer;
+      margin-bottom: 10px;
+      padding: 10px;
+      border: 1px solid #ccc;
+      background-color: #fff;
+    }
+
+    .post:hover {
+      background-color: #f0f0f0;
+    }
+  </style>
+</head>
+<body>
+  <div id="navbar">
+    <!-- Navbar content goes here -->
+    <h2>Navbar</h2>
+  </div>
+  
+  <div id="container">
+    <div id="left-sidebar">
+      <!-- Left sidebar content goes here -->
+      <h2>Recent Posts</h2>
+      <div v-for="post in recentPosts" :key="post.id" class="post">
+        {{ post }}
+        <h3>{{ post.title }}</h3>
+      </div>
+    </div>
+    <div id="main-content">
+      <!-- Main content goes here -->
+      <h1>{{ selectedPost.title }}</h1>
+      <p>{{ selectedPost.content }}</p>
+      <p>{{ selectedPost.description }}</p>
+    </div>
+    <div id="right-sidebar">
+      <!-- Right sidebar content goes here -->
+      <h2>Popular Posts</h2>
+      <div v-for="post in popularPosts" :key="post.id" class="post">
+        <h3>{{ post.title }}</h3>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    const recentPosts = [
+      { id: 1, title: 'Post 1' },
+      { id: 2, title: 'Post 2' },
+      { id: 3, title: 'Post 3' },
+      { id: 4, title: 'Post 4' },
+      { id: 5, title: 'Post 5' }
+    ];
+
+    const popularPosts = [
+      { id: 6, title: 'Post 6' },
+      { id: 7, title: 'Post 7' },
+      { id: 8, title: 'Post 8' },
+      { id: 9, title: 'Post 9' },
+      { id: 10, title: 'Post 10' }
+    ];
+
+    const selectedPost = {
+      id: 1,
+      title: 'Selected Post',
+      content: 'This is the content of the selected post.',
+      description: 'A brief description of the selected post.'
+    };
+  </script>
+</body>
+</html>

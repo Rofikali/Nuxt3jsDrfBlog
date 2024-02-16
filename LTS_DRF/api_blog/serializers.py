@@ -2,12 +2,12 @@
 from rest_framework.serializers import (
     ModelSerializer,
     HyperlinkedIdentityField,
-    SerializerMethodField
+    SerializerMethodField,
+    Serializer
 )
 from .models import Post
 # from api_accounts.serializsers import ProfileSerializer
 # from users.models import Profile
-
 
 # class PostCreateSerializer(ModelSerializer):
 
@@ -24,6 +24,7 @@ from .models import Post
 
 
 class PostListSerializer(ModelSerializer):
+
     detail_url = HyperlinkedIdentityField(
         view_name='api_blogs:detail',
         lookup_field='pk'

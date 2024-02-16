@@ -1,20 +1,18 @@
 <script setup>
-const route = useRoute();
-const id = route.params.id
-// console.log('here is id', id);
-// import { onMounted } from "vue";
-import useShowPosts from '~/composables/postsData';
-import { onMounted } from "vue";
-
-// const { allposts } = useShowPosts();
-const {
-    posts,
-    error,
-    pending,
-    getPosts
-} = useShowPosts('http://127.0.0.1:8000/posts/' + id);
-onMounted(getPosts);
-
+// defineProps(['posts'])
+defineProps({
+    // posts: Object
+    posts: {
+        type: Object,
+        required: true
+    },
+    error: {
+        type: String
+    },
+    pending: {
+        type: Boolean
+    }
+})
 
 </script>
 <template>
@@ -24,9 +22,6 @@ onMounted(getPosts);
         </div>
         <div v-else-if="pending">
             <h2>pending is here - {{ pending }}</h2>
-        </div>
-        <div v-else>
-            data - {{ posts }}
         </div>
         <div v-else="posts">
             <div class="grid grid-rows-3 grid-flow-col gap-4">
@@ -40,8 +35,9 @@ onMounted(getPosts);
                                             ID - {{ posts.id }}
                                         </h2>
                                         <p class="leading-relaxed text-base">title - {{ posts.title }}.</p>
-                                        <a class="mt-3 text-indigo-500 inline-flex items-center">Author - {{ posts.author }}
-                                        </a>
+                                        <NuxtLink :to="{ name: 'posts-user', params: { user: posts.author } }">
+                                            Author - {{ posts.author }}
+                                        </NuxtLink>
                                         <h3>Content - {{ posts.content }}</h3>
                                     </div>
                                 </div>

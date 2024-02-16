@@ -1,17 +1,20 @@
 <script setup>
 
-// import useShowPosts from '~/composables/postsData';
-import useCategoryPosts from '~/composables/categoriesData'
-import { onMounted } from "vue";
+defineProps(
+    {
+        categories: {
+            type: Object
+        },
+        pendings: {
+            type: Boolean
+        },
+        errors: {
+            type: String
+        }
+    }
+)
 
-const {
-    pendings,
-    categories,
-    errors,
-    getCategories
-} = useCategoryPosts();
-// } = useCategoryPosts('http://127.0.0.1:8000/categories/');
-onMounted(getCategories);
+
 
 </script>
 
