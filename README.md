@@ -32,6 +32,13 @@ cd 'folder name'
 python3 manage.py runserver
 
 ```
+``` windows 11
+# activate env and run djagno server
+env/script/activate
+cd 'folder name'
+python manage.py runserver
+
+```
 
 
 Check out the [deployment documentation](https://nuxt.com/docs/getting-started/deployment) for more information.
