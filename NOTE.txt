@@ -16,3 +16,9 @@ echo "# Nuxt3jsDrfBlog" >> README.md
   git push -u origin main
   
   
+  Django
+  1. added factory boy
+
+
+  Nuxt3
+  1. nothing done yet.

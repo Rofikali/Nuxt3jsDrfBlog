@@ -2,7 +2,16 @@ from django.contrib import admin
 from django.urls import path, include
 
 urlpatterns = [
-    path('admin/', admin.site.urls),
-    path('', include('api.urls', namespace='apis')),
-    path('accounts/', include('accounts.urls', namespace='accounts')),
+    path("admin/", admin.site.urls),
+    path("", include("api.urls", namespace="apis")),
+    path("accounts/", include("accounts.urls", namespace="accounts")),
 ]
+
+
+# {
+#     "email": "micky@gmail.com",
+#     "name": "micky",
+#     "password": "geekyshows",
+#     "password2": "geekyshows",
+#     "tc": "True",
+# }
