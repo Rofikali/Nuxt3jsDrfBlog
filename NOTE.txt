@@ -18,6 +18,7 @@ echo "# Nuxt3jsDrfBlog" >> README.md
   
   Django
   1. added factory boy
+  2. updated requirements.txt file
 
 
   Nuxt3
