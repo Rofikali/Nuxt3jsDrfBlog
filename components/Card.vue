@@ -4,7 +4,7 @@ const props = defineProps(['id', 'slug', 'title', 'content', 'author']);
 </script>
 <template>
     <div>
-        <div class="grid grid-rows-3 grid-flow-col gap-4">
+        <div class="grid grid-rows-2 grid-flow-col gap-4">
             <div class="row-span-3 ...">
                 <section class="text-gray-600 body-font">
                     <div class="container px-5 py-24 mx-auto">
@@ -20,8 +20,8 @@ const props = defineProps(['id', 'slug', 'title', 'content', 'author']);
                                             {{ title }}
                                         </NuxtLink> -->
                                     </h2>
-                                    <p class="leading-relaxed text-base">{{ content }}.</p>
-                                    <a class="mt-3 text-indigo-500 inline-flex items-center">Detail - {{ author }}
+                                    <p class="leading-relaxed text-base">Content - {{ content }}.</p>
+                                    <a class="mt-3 text-indigo-500 inline-flex items-center">Autor - {{ author }}
                                     </a>
                                 </div>
                             </div>

@@ -12,12 +12,12 @@ console.log('posts is here', posts)
 
 <template>
     <div>
-        <h1>This is parents child page here</h1>
+        <!-- <h1>This is child page / inside Parents page here</h1> -->
         <div v-if="pending">
             Loading ...
         </div>
         <div v-else-if="posts">
-            ID is here - {{ route.params.child }}
+            <!-- ID is here - {{ route.params.child }} -->
             <LazyDetail :id=posts.id :slug=posts.slug :title=posts.title :content=posts.content :author=posts.author
                 :key="posts.id" />
         </div>

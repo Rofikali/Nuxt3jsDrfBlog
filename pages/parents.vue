@@ -13,7 +13,7 @@ const { pending, data: posts } = useLazyFetch("http://127.0.0.1:8000/");
 
 <template>
     <div>
-        <div>
+        <div class="column-2">
             <div v-if="pending">
                 Loading ...
             </div>
@@ -24,11 +24,13 @@ const { pending, data: posts } = useLazyFetch("http://127.0.0.1:8000/");
                 </div>
             </div>
         </div>
-        <h2>Hello Single Post is Here.</h2>
+        <!-- <h2>Hello Single Post is Here.</h2> -->
         <!-- <NuxtPage :foobar="123" /> -->
         <h2>
-            Single Post with NuxtPage
-            <NuxtPage :foobar='1' />
+            <!-- Single Post with NuxtPage -->
+            <div v-if="posts">
+                <NuxtPage :foobar='1' />
+            </div>
         </h2>
     </div>
 </template>
