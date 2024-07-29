@@ -25,8 +25,8 @@ defineProps({
             <h2>pending is here - {{ pending }}</h2>
         </div>
         <div v-else="posts">
-            <div v-for=" { id, title, content, author, date_posted } in posts" class="grid grid-rows-3 grid-flow-col gap-4"
-                :key="id">
+            <div v-for=" { id, title, content, author, date_posted } in posts"
+                class="grid grid-rows-3 grid-flow-col gap-4" :key="id">
                 <div class="row-span-3 ...">
                     <section class="text-gray-600 body-font">
                         <div class="container px-5 py-24 mx-auto">
@@ -50,6 +50,9 @@ defineProps({
                         </div>
                     </section>
                 </div>
+            </div>
+            <div>
+                hello world
             </div>
         </div>
     </div>

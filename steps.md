@@ -15,9 +15,9 @@ Nuxt3 Frontend
 
 
 Django Python
-    >>> create a django app like { html, css, js, python }
-    >>> create a list view for { html, css, js, python }
-    >>> create a detail view for { html, css, js, python }
+    >>> create a django app like { linux, post, python }
+    >>> create views
+    >>> create urls.py urls with ( namespaace )
     >>> Connect with frontent { with nuxt3 }
 
 

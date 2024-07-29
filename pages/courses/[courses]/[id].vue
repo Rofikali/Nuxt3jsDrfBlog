@@ -9,6 +9,7 @@ console.log('id - Data ', route.params.id);
 
 <template>
     <div>
+        <h3>[courses]/[id] page </h3>
         <LazyCoursesSingle :course="data" />
     </div>
 </template>

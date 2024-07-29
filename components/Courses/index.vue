@@ -14,31 +14,35 @@ const props = defineProps({
 
 <template>
     <div class="main">
+        <br><br>
+        <div class="flex">
+            <div class="w-full px-4">
+                <div v-for="item in props.courses" :key="item.id">
+                    <h1>
+                        <NuxtLink :to="{
+                            name: 'courses-courses-id',
+                            params: { id: item.id }
+                        }">
+                            <h1>
+                                <strong> ID </strong>- {{ item.id }}
+                            </h1>
+                            <h1>
+                                <strong> titles </strong>- {{ item.title }}
+                            </h1>
+                            <p>
+                                <strong>content </strong> - {{ item.content.substring(0, 55) }}
+                            </p>
+                        </NuxtLink>
+                    </h1>
+                </div>
+            </div>
+            <div class="w-full px-4">
+                 <!-- <NuxtPage :user="data" /> -->
+                <NuxtPage />
+            </div>
+        </div>
+        <br><br><br>
         <!-- main one  -->
-        <div v-for="item in props.courses" :key="item.id" class="left-side">
-            <h1>
-                <NuxtLink :to="{
-                    name: 'courses-courses-id',
-                    params: { id: item.id }
-                }">
-                    <h1>
-                        <strong> ID </strong>- {{ item.id }}
-                    </h1>
-                    <h1>
-                        <strong> titles </strong>- {{ item.title }}
-                    </h1>
-                    <p>
-                        <strong>content </strong> - {{ item.content.substring(0, 55) }}
-                    </p>
-                </NuxtLink>
-            </h1>
-        </div>
-
-        <div class="right-side">
-            <NuxtPage />
-            <!-- <h2>right one</h2> -->
-            <!-- <NuxtPage :user="data" /> -->
-        </div>
     </div>
 </template>
 

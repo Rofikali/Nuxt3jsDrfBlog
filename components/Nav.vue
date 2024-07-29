@@ -14,8 +14,11 @@
         <li>
           <NuxtLink :to="{ name: 'about' }">About</NuxtLink>
         </li>
-        <li>
+        <!-- <li>
           <NuxtLink :to="{ name: 'categories' }">Categories</NuxtLink>
+        </li> -->
+        <li>
+          <NuxtLink :to="{ name: 'courses' }">Courses</NuxtLink>
         </li>
         <li>
           <NuxtLink :to="{ name: 'users' }">Users</NuxtLink>
