@@ -5,7 +5,7 @@ defineProps({
     // posts: Object
     posts: {
         type: Object,
-        required: true
+        // required: true
     },
     error: {
         type: String

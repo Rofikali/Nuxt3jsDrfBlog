@@ -5,7 +5,7 @@ defineProps({
     // posts: Object
     posts: {
         type: Object,
-        required: true
+        // required: true
     },
     error: {
         type: String
@@ -40,7 +40,7 @@ defineProps({
                                             </NuxtLink>
                                         </h2>
                                         <p class="leading-relaxed text-base">Content - {{ content }}.</p>
-                                        <NuxtLink :to="{ name: 'posts-user', params: { user: author } }">
+                                        <NuxtLink :to="{ name: 'posts-user', params: { user : author } }">
                                             Author - {{ author }}
                                         </NuxtLink>
                                         <h3>Date - {{ date_posted }}</h3>
@@ -50,9 +50,9 @@ defineProps({
                         </div>
                     </section>
                 </div>
+                hello world
             </div>
             <div>
-                hello world
             </div>
         </div>
     </div>

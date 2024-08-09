@@ -37,12 +37,11 @@ const props = defineProps({
                 </div>
             </div>
             <div class="w-full px-4">
-                 <!-- <NuxtPage :user="data" /> -->
-                <NuxtPage />
+                <NuxtPage :names="props.courses" />
             </div>
         </div>
         <br><br><br>
-        <!-- main one  -->
+        <!-- main one  --> 
     </div>
 </template>
 
