@@ -7,9 +7,9 @@ from rest_framework.generics import (
     ListAPIView,
     RetrieveAPIView,
 )
-from . serializers import (
+from .serializers import (
     CategoryListSerializer,
-    CategorySerializer
+    CategorySerializer,
     # PostDetailSerializer,
 )
 
@@ -26,9 +26,19 @@ class CategoryListApiView(ListAPIView):
         # Retrieve one post per author
         unique_categories = []
         for category in categories:
+            # print("<<<<<<<<<<<<<<<<<<<<<<<< ")
+            # print("category in for loop ", category)
+            # print(">>>>>>>>>>>>>>>>>>>>>>>>")
             name_category = queryset.filter(category=category).first()
+            # print("<<<<<<<<<<<<<<<<<<<<<<<< ")
+            # print("category name", name_category)
+            # print(">>>>>>>>>>>>>>>>>>>>>>>>")
             if name_category:
                 unique_categories.append(name_category)
+
+                # print("<<<<<<<<<<<<<<<<<<<<<<<< ")
+                # print("unique category ", unique_categories)
+                # print(">>>>>>>>>>>>>>>>>>>>>>>>")
 
         return unique_categories
 
@@ -37,8 +47,7 @@ class PerticularCategoryApiView(ListAPIView):
     serializer_class = CategoryListSerializer
 
     def get_queryset(self):
-        category_name = get_object_or_404(
-            Category, name=self.kwargs.get('category'))
+        category_name = get_object_or_404(Category, name=self.kwargs.get("category"))
         return CategoryList.objects.filter(category=category_name)
         # return CategoryList.objects.filter(category=category_name).order_by('-date_created')
 

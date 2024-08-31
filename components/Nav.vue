@@ -14,18 +14,18 @@
         <li>
           <NuxtLink :to="{ name: 'about' }">About</NuxtLink>
         </li>
-        <!-- <li>
+        <li>
           <NuxtLink :to="{ name: 'categories' }">Categories</NuxtLink>
-        </li> -->
+        </li>
         <li>
           <NuxtLink :to="{ name: 'courses' }">Courses</NuxtLink>
         </li>
-        <li>
+        <!-- <li>
           <NuxtLink :to="{ name: 'users' }">Users</NuxtLink>
-        </li>
-        <li>
+        </li> -->
+        <!-- <li>
           <NuxtLink :to="{ name: 'cat-category', params: { category: 'Linux' } }">Cat</NuxtLink>
-        </li>
+        </li> -->
       </ul>
     </nav>
   </div>

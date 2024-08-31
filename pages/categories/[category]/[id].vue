@@ -13,7 +13,7 @@ const {
     error_data,
     category,
     getCategory
-} = useCategoryPosts('http://127.0.0.1:8000/categories/category/' + route.params.id);
+} = useCategoryPosts('http://127.0.0.1:8000/api/categories/category/' + route.params.id);
 onMounted(getCategory);
 
 

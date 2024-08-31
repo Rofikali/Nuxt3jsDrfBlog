@@ -1,5 +1,7 @@
 <script setup>
 
+
+import RichTextEditor from '~/components/RichTextEditor.vue'
 const route = useRoute();
 import useCategoryPosts from '~/composables/categoriesData'
 import { onMounted } from "vue";
@@ -9,7 +11,7 @@ const {
     categoriesCategory,
     error,
     getCategoriesCategory
-} = useCategoryPosts(`http://127.0.0.1:8000/categories/${route.params.category}`);
+} = useCategoryPosts(`http://127.0.0.1:8000/api/categories/${route.params.category}`);
 onMounted(getCategoriesCategory);
 
 import { ref } from 'vue';
@@ -25,13 +27,17 @@ const count = ref(0);
 // setTimeout(delayedFunction, 2000);
 
 // import ID from '../categories/[category]/[id].vue'
-import IdVue from '../categories/[category]/[id].vue';
+// import IdVue from '../categories/[category]/[id].vue';
 
 </script>
 
 <template>
     <div class="main">
         <div>
+
+            <div>
+                <RichTextEditor />
+            </div>
             <h1>Categories / [category].vue Page.</h1>
             <LazyCategoriesCategory :categoriesCategory="categoriesCategory" :pending="pending" :error="error" />
         </div>

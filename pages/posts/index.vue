@@ -1,8 +1,10 @@
 <script setup>
 
 // import { onMounted } from "vue";
+// import RichTextEditor from '~/components/RichTextEditor.vue'
 import useShowPosts from '~/composables/postsData';
 import { onMounted } from "vue";
+
 
 // const { allposts } = useShowPosts();
 const {
@@ -21,6 +23,9 @@ onMounted(getPosts);
 
 <template>
     <div>
+        <div>
+            <RichTextEditor />
+        </div>
         <LazyPosts :posts="posts" :error="error" :pending="pending" />
     </div>
 </template>

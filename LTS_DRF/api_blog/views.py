@@ -1,14 +1,12 @@
-from rest_framework import status
-from rest_framework.status import (
-    HTTP_200_OK,
-    HTTP_400_BAD_REQUEST
-)
 from django.contrib.auth.models import User
 from .serializers import PostListSerializer
-from rest_framework.response import Response
 from rest_framework.generics import ListAPIView
 from django.shortcuts import get_object_or_404
 from django.contrib.auth import get_user_model
+from .models import Post
+
+# from django_filters.rest_framework import DjangoFilterBackend
+from rest_framework.permissions import AllowAny
 from rest_framework.generics import (
     ListAPIView,
     RetrieveAPIView,
@@ -16,18 +14,13 @@ from rest_framework.generics import (
     # RetrieveDestroyAPIView,
     # CreateAPIView
 )
-from . serializers import (
+from .serializers import (
     PostListSerializer,
     PostDetailSerializer,
     # PostUpdateSerializer,
     # PostCreateSerializer
 )
-from .models import Post
-from .permissions import IsPostOwner
-from .paginations import TestingOffsetPagination
-# from django_filters.rest_framework import DjangoFilterBackend
-from rest_framework.filters import SearchFilter
-from rest_framework.permissions import IsAdminUser, AllowAny
+
 
 # listing perticular user's posts
 User = get_user_model()
@@ -57,6 +50,7 @@ class PostListApiView(ListAPIView):
     # pagination_class = TestingOffsetPagination
     # filter_backends = [SearchFilter]
     # search_fields = ['content', 'title']
+
 
 # {
 #     def get_queryset(self):
@@ -98,8 +92,8 @@ class PerticularUserPosts(ListAPIView):
     permission_classes = [AllowAny]
 
     def get_queryset(self):
-        user = get_object_or_404(User, username=self.kwargs.get('author'))
-        return Post.objects.filter(author=user).order_by('-date_posted')
+        user = get_object_or_404(User, username=self.kwargs.get("author"))
+        return Post.objects.filter(author=user).order_by("-date_posted")
 
         # user = get_object_or_404(User, username=self.kwargs.get('author'))
         # print()

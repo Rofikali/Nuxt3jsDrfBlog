@@ -1,7 +1,7 @@
 import { ref } from 'vue'
 // import axios from 'axios';
 
-export default function useShowPosts(url = 'http://127.0.0.1:8000/posts') {
+export default function useShowPosts(url = 'http://127.0.0.1:8000/api/posts') {
     // const posts_url = 'http://127.0.0.1:8000/'
     const { pending, data: posts, error } = useLazyFetch(url);
 

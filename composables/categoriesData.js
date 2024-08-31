@@ -3,7 +3,7 @@ import { ref } from 'vue'
 
 // const route = useRoute()
 
-export default function useCategoryPosts(url = 'http://127.0.0.1:8000/categories/', parameter = '', id = null) {
+export default function useCategoryPosts(url = 'http://127.0.0.1:8000/api/categories/', parameter = '', id = null) {
     // const categories_url = 'http://127.0.0.1:8000/categories/'
     const { pending: pendings, data: categories, error: errors } = useLazyFetch(url);
     // const categories_url = 'http://127.0.0.1:8000/categories/'
