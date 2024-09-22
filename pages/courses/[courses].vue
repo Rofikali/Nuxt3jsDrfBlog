@@ -2,7 +2,8 @@
 
 import RichTextEditor from '~/components/RichTextEditor.vue'
 const route = useRoute();
-const { data, pending, error } = await useFetch(`http://127.0.0.1:8000/api/${route.params.courses}`)
+// const { data, pending, error } = await useFetch(`http://127.0.0.1:8000/api/${route.params.courses}`)
+const { data, pending, error } = await useFetch('http://127.0.0.1:8000/api')
 console.log('courses here', data);
 console.log('type of data', typeof (data));
 

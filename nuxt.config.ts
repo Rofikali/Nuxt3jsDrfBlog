@@ -1,10 +1,8 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
   css: ['~/assets/css/main.css'],
+
   // devtools: { enabled: true },
-  modules: [
-    '@nuxtjs/tailwindcss'
-  ],
   // imports: {
   //   dirs: [
   //     // Scan top-level modules
@@ -15,5 +13,9 @@ export default defineNuxtConfig({
   //     'composables/**'
   //   ]
   // }
+  modules: [
+    '@nuxtjs/tailwindcss'
+  ],
 
+  compatibilityDate: '2024-09-10'
 })
